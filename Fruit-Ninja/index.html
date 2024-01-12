@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enter Access Code to Conitnue</title>
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+
+    <!-- STYLE -->
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        padding: 10px 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(0, 196, 251);
+        color: white;
+      }
+      input[type="text"] {
+        padding: 10px 20px;
+        border: 1px solid black ;
+        outline: none;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+      input[type="text"]:focus {
+        border: 1px solid white;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.9);
+      }
+    </style>
+
+    <!-- FAVICON -->
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="images/fruit-ninja-classic.jpg"
+        style="border-radius: 10%; width: 30%"
+      />
+      <h1>Enter your Access code to Play the Game</h1>
+      <form onsubmit="checkPassword(event)">
+        <input type="text" id="passwordInput" placeholder="Code: XXX-XXX-XXX" />
+        <button type="submit">Start Game</button>
+      </form>
+    </div>
+    <script>
+      function checkPassword(event) {
+        //TODO: DO AUTHENTICATION HERE ONCE THE BACK END TEAM IS DONE
+        event.preventDefault();
+        const enteredPassword = document.getElementById("passwordInput").value;
+        // Replace the fake credential with the actual correct password
+        const correctPassword = "123-456-789";
+
+        if (enteredPassword === correctPassword) {
+          window.location.href = "game.html"; // Redirect to the game page
+        } else {
+          alert("Incorrect password. Please try again."); // Display an error message here
+        }
+      }
+    </script>
+  </body>
+</html>
